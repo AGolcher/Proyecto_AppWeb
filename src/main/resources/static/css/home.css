@@ -32,6 +32,7 @@ display: como se muestra, o el compartamiento, un bloque de nivel ***
 }
 
 .navbar{
+    font-size: 20px;
     height:15vh;
     width:100%;
     margin:auto;
@@ -80,5 +81,5 @@ nav ul li a{
     height: 80%;
     position: absolute;
     bottom: 50px;
-    right: 80px;
+    right: 100px;
 }
