@@ -21,6 +21,7 @@ public class Productos2 implements Serializable {
     private String NOMBRE;
     private int CANTIDAD;
     private String imagen;
+    private double PRECIO;
 
     public long getId() {
         return id;
@@ -52,6 +53,14 @@ public class Productos2 implements Serializable {
 
     public void setCANTIDAD(int CANTIDAD) {
         this.CANTIDAD = CANTIDAD;
+    }
+
+    public double getPRECIO() {
+        return PRECIO;
+    }
+
+    public void setPRECIO(double PRECIO) {
+        this.PRECIO = PRECIO;
     }
 
 }

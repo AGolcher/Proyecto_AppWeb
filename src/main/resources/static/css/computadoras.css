@@ -112,12 +112,17 @@ nav ul li a {
     margin-top: 24px;
     margin-bottom: 15px;
     color: beige;
-     border-bottom: 6px solid blue;
+    border-bottom: 6px solid blue;
     background-color: lightblue;
 }
 
 .content p {
     font-size: 20px;
     color: darkcyan;
+}
+
+.cartasposc {
+    display: inline-block;
+    margin:20px;
 }
 

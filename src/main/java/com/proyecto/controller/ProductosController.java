@@ -4,9 +4,10 @@
  */
 package com.proyecto.controller;
 
+import com.proyecto.entity.Pantallas;
 import com.proyecto.entity.Productos2;
+import com.proyecto.service.IPantallasService;
 import com.proyecto.service.IProductos2Service;
-import com.proyecto.service.Productos2Service;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,6 +26,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ProductosController {
     @Autowired
     private IProductos2Service productos2Service;
+    
+    @Autowired
+    private IPantallasService pantallasService;
 
     @GetMapping("/productos")
     public String index(Model model) {
@@ -53,12 +57,52 @@ public class ProductosController {
         List<Productos2> listaProductos2 = productos2Service.getAllProductos2();
         model.addAttribute("computadorescreardataset", productos2);
         return "crear";
-    }
+    } 
 
     @GetMapping("/delete/{id}") //eliminar elemento
     public String eliminarPersona(@PathVariable("id") Long id) {
         productos2Service.delete(id);
         return "redirect:/productos";
     }
+    /* 
+   //////////////////////////PANTALLAS/////////////////////////////////
+    
+     @GetMapping("/pantallas")
+        public String index(ModelPantallas modelpantallas) {
+        List<Pantallas> listaPantallas = pantallasService.getAllPantallas();
+        modelpantallas.addAttribute("titulo", "Tabla Pantallas");
+        modelpantallas.addAttribute("pantallasdataset", listaPantallas);
+        return "pantallas";
+    }
+      
+    @GetMapping("/pantallaN")
+    public String crearPantallas(Model model) {
+        List<Pantallas> listaPantallas = pantallasService.getAllPantallas();
+        model.addAttribute("pantallasdataset", new Pantallas());
+        return "crear"; 
+    }
+    
+     @PostMapping("/save")
+    public String savePantallas(@ModelAttribute Pantallas pantallas) {
+        pantallasService.savePantallas(pantallas);
+        return "redirect:/pantallas"; 
+    }
+    
+    @GetMapping("/editPantallas/{id}")
+    public String editarPantallas(@PathVariable("id") Long id, Model model) {
+        Pantallas pantallas = pantallasService.getPantallasById(id);
+        List<Pantallas> listaPantallas = pantallasService.getAllPantallas();
+        model.addAttribute("pantallasdataset", pantallas);
+        return "crear";
+    }
+
+    @GetMapping("/delete/{id}") //eliminar elemento
+    public String eliminarPantallas(@PathVariable("id") Long id) {
+        pantallasService.delete(id);
+        return "redirect:/pantallas";
+    }*/
 }
+        
+        
+
 
