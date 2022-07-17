@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 
 /** 
  *
- * @author Golcher
+ * @author hoGolcher
  */
 @Repository
 public interface Productos2Repository extends CrudRepository<Productos2, Long> {
